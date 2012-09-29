@@ -18,9 +18,13 @@ Or install it yourself as:
 
 ## Usage
 
-** after(val) **
+### after
 
 Return the value after the one pass in argument
+
+```ruby
+	after(val)	
+```
 
 Demo
 
@@ -38,10 +42,15 @@ Code
 	end
 ```
 
-** stealth_delete! *vals **
-** stealth_delete *vals **
+
+### stealth_delete
 
 Delete value(s) passed by, but return the array instead of the deleted value
+
+```ruby
+	stealth_delete! *vals
+	stealth_delete *vals
+```
 
 Demo
 
