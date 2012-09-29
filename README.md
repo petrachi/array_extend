@@ -1,6 +1,6 @@
 # ArrayExtend
 
-TODO: Write a gem description
+Extend ruby Array. No override.
 
 ## Installation
 
@@ -18,7 +18,47 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+* after(val)
+
+Return the value after the one pass in argument
+
+Demo
+
+	["hello", "world"].after("hello")	#=> "world"
+	["hello", "world"].after("world")	#=> nil
+	["hello", "world"].after("none")		#=> nil
+
+Code
+
+	def after val
+    	self[index(val) + 1] if self.include? val
+	end
+
+
+* stealth_delete! *vals
+* stealth_delete *vals
+
+Delete value(s) passed by, but return the array instead of the deleted value
+
+Demo
+
+	["ruby", "the", "programmer", "best", "friend"].stealth_delete! "ruby"
+	#=> ["the", "programmer", "best", "friend"] 
+	
+	["ruby", "the", "programmer", "best", "friend"].stealth_delete! "ruby", "best", "programmer"
+	#=> ["the", "friend"] 
+	
+	["ruby", "the", "programmer", "best", "friend"].stealth_delete! "hello"
+	#=> ["ruby", "the", "programmer", "best", "friend"]
+
+Code
+
+	def stealth_delete! *vals
+	  vals.each do |val|
+	    delete val
+	  end
+	  return self
+	end
 
 ## Contributing
 
