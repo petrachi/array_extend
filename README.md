@@ -18,30 +18,34 @@ Or install it yourself as:
 
 ## Usage
 
-* after(val)
+** after(val) **
 
 Return the value after the one pass in argument
 
 Demo
 
+```ruby
 	["hello", "world"].after("hello")	#=> "world"
 	["hello", "world"].after("world")	#=> nil
 	["hello", "world"].after("none")		#=> nil
+```
 
 Code
 
+```ruby
 	def after val
     	self[index(val) + 1] if self.include? val
 	end
+```
 
-
-* stealth_delete! *vals
-* stealth_delete *vals
+** stealth_delete! *vals **
+** stealth_delete *vals **
 
 Delete value(s) passed by, but return the array instead of the deleted value
 
 Demo
 
+```ruby
 	["ruby", "the", "programmer", "best", "friend"].stealth_delete! "ruby"
 	#=> ["the", "programmer", "best", "friend"] 
 	
@@ -50,15 +54,18 @@ Demo
 	
 	["ruby", "the", "programmer", "best", "friend"].stealth_delete! "hello"
 	#=> ["ruby", "the", "programmer", "best", "friend"]
+```
 
 Code
 
+```ruby
 	def stealth_delete! *vals
 	  vals.each do |val|
 	    delete val
 	  end
 	  return self
 	end
+```
 
 ## Contributing
 
