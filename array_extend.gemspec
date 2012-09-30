@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Thomas Petrachi"]
   gem.email         = ["thomas.petrachi@vodeclic.com"]
   gem.description   = %q{Extend ruby Array. No override.}
-  gem.summary       = %q{Adding methods [:after, :stealth_delete]}
+  gem.summary       = %q{Adding methods %w{after stealth_delete tautology? compact_by}}
   gem.homepage      = "https://github.com/petrachi/array_extend"
 
   gem.files         = `git ls-files`.split($\)

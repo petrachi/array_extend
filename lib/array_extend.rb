@@ -11,11 +11,35 @@ class Array
     vals.each do |val|
       delete val
     end
-    return self
   end
   
+  # maps an '&&' operation through all elements of array
+  def tautology?
+    self.inject(true){ |res, elt| res && elt.present? }
+  end
+  
+  # allow to compact by left side, or right side. this only delete the "extreme positioned" nils values
+  def compact_by! side
+    case side
+    when :right, "right"
+      while self.last.blank?
+        self.pop
+      end
+      
+    when :left, "left"
+      while self.first.blank?
+        self.shift
+      end
+    
+    else
+      raise ArgumentError, "'side' argument must be in %w{right left}"
+    end
+    
+    self
+  end
+
   # duplicate method without self modification
-  [:stealth_delete].each do |method_name|
+  [:stealth_delete, :compact_by].each do |method_name|
     define_method method_name do |*args|
       array = self.dup
       eval "array.#{ method_name }! *args"
