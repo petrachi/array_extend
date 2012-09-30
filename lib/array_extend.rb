@@ -40,9 +40,9 @@ class Array
 
   # duplicate method without self modification
   [:stealth_delete, :compact_by].each do |method_name|
-    define_method method_name do |*args|
+    define_method method_name do |*args, &block|
       array = self.dup
-      eval "array.#{ method_name }! *args"
+      eval "array.#{ method_name }! *args, &block"
       return array
     end
   end
