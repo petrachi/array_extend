@@ -4,7 +4,7 @@ Extend ruby Array. No override.
 
 ## Support
 
-Ruby 1.9.3 and Ruby ree-1.8.7: All feature supported
+Validate for Ruby 1.9.3 and Ruby ree-1.8.7
 
 ## Installation
 
