@@ -1,3 +1,7 @@
+# Deprecation note
+
+This gem is no longer maintained.
+
 # ArrayExtend
 
 Extend ruby Array. No override.
